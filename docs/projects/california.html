@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="使用California Housing数据集完成的探索性数据分析项目。">
+  <meta name="theme-color" content="#315b72">
+  <title>加州房价探索性分析｜城市数据分析作品集</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V8l5-3v14m0-9 5-3v12m0-8 6-3v11M2 19h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>城市数据分析作品集</span></a>
+      <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
+      <nav class="site-nav"><a href="../#projects">代表项目</a><a href="../#learning">学习路径</a><a href="https://github.com/baishi-oss/urban-data-analysis-portfolio/tree/main/projects/california-housing">项目代码</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <p class="breadcrumbs"><a href="../">首页</a> / 代表项目 / 加州房价探索性分析</p>
+        <p class="eyebrow">Exploratory data analysis</p>
+        <h1>加州房价探索性数据分析</h1>
+        <p class="hero-lead">使用 scikit-learn California Housing 数据集练习从分布检查、异常值处理到地理可视化和相关性分析的基础流程。</p>
+        <div class="project-meta"><span class="tag">20,640 条记录</span><span class="tag">8 个输入特征</span><span class="tag">地理可视化</span><span class="tag orange">基础 EDA</span></div>
+        <figure class="hero-figure reveal"><img src="../assets/images/california/geography.png" alt="加州房价地理分布图"></figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content-grid">
+        <aside class="side-note reveal">
+          <p class="eyebrow">Project brief</p>
+          <dl>
+            <dt>数据</dt><dd>California Housing</dd>
+            <dt>目标</dt><dd>探索特征与房价中位数关系</dd>
+            <dt>工具</dt><dd>pandas、Seaborn、Matplotlib、scikit-learn</dd>
+            <dt>阶段</dt><dd>数据分析基础练习</dd>
+            <dt>代码</dt><dd><a href="https://github.com/baishi-oss/urban-data-analysis-portfolio/tree/main/projects/california-housing">GitHub 项目目录 →</a></dd>
+          </dl>
+        </aside>
+
+        <div class="prose">
+          <div class="reveal">
+            <h2>分析过程</h2>
+            <p>项目使用 `fetch_california_housing()` 获取数据，将字段映射为中文后检查主要变量分布。为了让图表更易读，探索阶段过滤了平均房间数大于 80、平均卧室数大于 8、人口大于 20,000 的极端记录。</p>
+            <div class="callout"><strong>处理边界：</strong>这里过滤极端值是为了改善探索性图表，不代表正式建模时应使用相同规则。建模阶段需要在训练数据内部重新评估。</div>
+          </div>
+
+          <section aria-labelledby="ca-findings">
+            <h2 id="ca-findings" class="reveal">可视化结果</h2>
+            <article class="finding reveal"><span class="finding-number">STEP 01</span><h3>先观察原始分布，再决定如何处理</h3><p>平均房间数、平均卧室数和人口存在明显长尾，说明不能直接依赖均值或固定坐标范围。</p><figure class="figure-frame"><img src="../assets/images/california/distributions.png" alt="加州房价数据原始特征分布"><figcaption class="caption">图 1｜主要特征的原始核密度分布。</figcaption></figure></article>
+            <article class="finding reveal"><span class="finding-number">STEP 02</span><h3>过滤极端记录后，主要分布区间更清晰</h3><p>预处理后的图表更适合观察主体样本，但公开说明同时保留过滤阈值，避免把图形改善误解为数据质量提升。</p><figure class="figure-frame"><img src="../assets/images/california/cleaned-distributions.png" alt="预处理后的特征分布"><figcaption class="caption">图 2｜过滤少量极端记录后的特征分布。</figcaption></figure></article>
+            <article class="finding reveal"><span class="finding-number">STEP 03</span><h3>空间位置是理解房价差异的重要背景</h3><p>较高房价值在旧金山湾区、洛杉矶及部分沿海区域更集中。图中同时用点大小表达人口，用颜色表达房价。</p><figure class="figure-frame"><img src="../assets/images/california/geography.png" alt="加州房价地理分布"><figcaption class="caption">图 3｜经纬度、人口和房价的联合表达。</figcaption></figure></article>
+            <article class="finding reveal"><span class="finding-number">STEP 04</span><h3>收入中位数与房价的线性关系最明显</h3><p>当前样本中，收入中位数与房价中位数相关系数约为 0.69；平均房间数与平均卧室数约为 0.70，提示两个特征包含重叠信息。</p><figure class="figure-frame"><img src="../assets/images/california/correlation.png" alt="加州房价特征相关性热力图"><figcaption class="caption">图 4｜数值特征的 Pearson 相关系数。</figcaption></figure></article>
+            <article class="finding reveal"><span class="finding-number">STEP 05</span><h3>散点矩阵用于识别趋势、离群点和目标值上限</h3><p>房价在 5 附近出现集中现象，来自数据集目标值上限。散点图也显示单一特征无法完整解释房价空间差异。</p><figure class="figure-frame"><img src="../assets/images/california/pairplot.png" alt="加州房价关键特征散点图矩阵"><figcaption class="caption">图 5｜房价、收入、房龄、房间数和纬度的散点矩阵。</figcaption></figure></article>
+          </section>
+
+          <section class="reveal"><h2>局限与下一步</h2><ul><li>当前成果是探索性分析，不包含预测模型和模型评估。</li><li>相关性不表示因果关系。</li><li>数据具有目标值截断和空间自相关等特征。</li><li>下一步可以建立训练/测试流程，对比线性模型与树模型，并加入空间交叉验证。</li></ul></section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> baishi-oss</span><a href="../">返回作品集首页</a></div></footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

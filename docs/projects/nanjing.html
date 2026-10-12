@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="南京2024—2025年老旧小区周边500米公共服务设施分析项目。">
+  <meta name="theme-color" content="#1f5b4a">
+  <title>南京老旧小区公共服务分析｜城市数据分析作品集</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V8l5-3v14m0-9 5-3v12m0-8 6-3v11M2 19h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>城市数据分析作品集</span></a>
+      <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
+      <nav class="site-nav"><a href="../#projects">代表项目</a><a href="../#learning">学习路径</a><a href="https://github.com/baishi-oss/urban-data-analysis-portfolio/tree/main/projects/nanjing-public-service">项目代码</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <p class="breadcrumbs"><a href="../">首页</a> / 代表项目 / 南京老旧小区公共服务分析</p>
+        <p class="eyebrow">Urban renewal · Spatial analysis</p>
+        <h1>南京 2024—2025 年老旧小区周边公共服务分析</h1>
+        <p class="hero-lead">将老旧小区改造名单与地图平台公共服务设施数据结合，观察 500 米生活圈中的区际差异、空间结构和潜在配套盲区。</p>
+        <div class="project-meta"><span class="tag">194 个分析样本</span><span class="tag">500 米范围</span><span class="tag">六类设施</span><span class="tag orange">2024—2025 改造批次</span></div>
+        <figure class="hero-figure reveal"><img src="../assets/images/nanjing/spatial-pattern.png" alt="南京老旧小区周边公共服务设施空间分布图"></figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content-grid">
+        <aside class="side-note reveal">
+          <p class="eyebrow">Project brief</p>
+          <dl>
+            <dt>研究对象</dt><dd>南京老旧小区改造名单</dd>
+            <dt>空间口径</dt><dd>小区周边 500 米</dd>
+            <dt>设施类别</dt><dd>医疗、教育、体育、公园、交通、政务社区</dd>
+            <dt>工具</dt><dd>Python、pandas、SciPy、Seaborn、Matplotlib</dd>
+            <dt>代码</dt><dd><a href="https://github.com/baishi-oss/urban-data-analysis-portfolio/tree/main/projects/nanjing-public-service">GitHub 项目目录 →</a></dd>
+          </dl>
+        </aside>
+
+        <div class="prose">
+          <div class="reveal">
+            <h2>研究问题与处理流程</h2>
+            <p>项目从分散的公开名单出发，统一行政区、小区名称、改造年份和坐标信息，再汇总每个小区周边六类公共服务设施数量。分析重点不是给小区简单排名，而是把总量、结构、区位和样本规模放在一起解释。</p>
+            <ol>
+              <li>整理 2024—2025 年改造名单并核对字段口径。</li>
+              <li>统一坐标系，标记可疑坐标并对设施数量重新计算。</li>
+              <li>构建分析底表，检查六类设施合计与总量的一致性。</li>
+              <li>以新街口为参照，计算距离并划分五个空间圈层。</li>
+              <li>从区域、空间、结构和优先级四个层次制作图表。</li>
+            </ol>
+            <div class="callout"><strong>安全处理：</strong>公开仓库不包含真实 API 密钥、原始抓取页面和完整过程性数据。密钥只从环境变量读取，Notebook 已清除运行输出和本机路径。</div>
+          </div>
+
+          <section aria-labelledby="findings-title">
+            <h2 id="findings-title" class="reveal">主要分析结果</h2>
+
+            <article class="finding reveal"><span class="finding-number">FINDING 01</span><h3>不同区的设施总量和类别构成并不相同</h3><p>箱线图保留了区内离散程度，右侧分项中位数则帮助判断差异主要来自哪类设施，避免只使用一个平均值概括整个行政区。</p><figure class="figure-frame"><img src="../assets/images/nanjing/district-difference.png" alt="各区公共服务设施总量与分项中位数"><figcaption class="caption">图 1｜各区 500 米公共服务设施总数分布与分项构成。</figcaption></figure></article>
+
+            <article class="finding reveal"><span class="finding-number">FINDING 02</span><h3>“全市—主城—核心区”三级放大更适合表达空间差异</h3><p>远郊样本与主城样本同框时会压缩中心城区细节。分级放大同时保留全市位置关系和主城内部差异，点大小或颜色用于表达设施总量。</p><figure class="figure-frame"><img src="../assets/images/nanjing/spatial-pattern.png" alt="南京老旧小区公共服务设施空间分布"><figcaption class="caption">图 2｜全市、主城和核心区的分级空间表达。</figcaption></figure></article>
+
+            <article class="finding reveal"><span class="finding-number">FINDING 03</span><h3>设施结构差异不能只看原始相关系数</h3><p>交通设施约占六类设施总量的 34.2%。由于多类设施共享“城市密度”这一潜在因素，项目进一步控制密度代理变量后观察偏相关，并比较各区内部构成。</p><figure class="figure-frame"><img src="../assets/images/nanjing/facility-structure.png" alt="公共服务设施类别构成和偏相关分析"><figcaption class="caption">图 3｜设施类别构成、控制密度后的偏相关与区际构成。</figcaption></figure></article>
+
+            <article class="finding reveal"><span class="finding-number">FINDING 04</span><h3>设施总量随距城市中心距离整体下降</h3><p>幂律拟合的 R² 为 0.42。核心区样本设施总数中位数为 362，3—6 公里和 6—10 公里圈层分别为 221 和 150。远距离圈层样本较少，因此只作探索性比较。</p><figure class="figure-frame"><img src="../assets/images/nanjing/distance-decay.png" alt="公共服务设施区位衰减与圈层差异"><figcaption class="caption">图 4｜距离衰减、圈层分布和不同设施类别的外围剩余比例。</figcaption></figure></article>
+
+            <article class="finding reveal"><span class="finding-number">FINDING 05</span><h3>极值样本同时体现总量差距和结构差距</h3><p>设施总数较高的样本集中于老城核心，低值样本以外围新城为主。堆叠条形图把六类设施拆开，便于判断差距来自单一类别还是整体不足。</p><figure class="figure-frame"><img src="../assets/images/nanjing/extremes.png" alt="设施总数最多和最少的小区"><figcaption class="caption">图 5｜设施总数极值小区及六类设施构成。</figcaption></figure></article>
+
+            <article class="finding reveal"><span class="finding-number">FINDING 06</span><h3>把批次、盲区和同区位基线放在同一分析框架中</h3><p>在排除设施数据不准确的溧水样本后，有 14 个小区在 500 米内未覆盖全部六类设施，公园景点缺失最常见。优先名单强调“相对同区位基线偏低”，而不是简单选择绝对值最低者。</p><figure class="figure-frame"><img src="../assets/images/nanjing/priority-patterns.png" alt="改造批次、配套盲区、优先小区与聚类模式"><figcaption class="caption">图 6｜批次投向、配套盲区、高优先样本和四类配套模式。</figcaption></figure></article>
+
+            <article class="finding reveal"><span class="finding-number">FINDING 07</span><h3>用散点矩阵复核关键变量关系</h3><p>散点矩阵用于检查区位、设施数量之间的趋势、离群点和分组结构，作为相关系数和聚类结果之外的视觉诊断。</p><figure class="figure-frame"><img src="../assets/images/nanjing/feature-matrix.png" alt="区位和六类公共服务设施关键特征散点矩阵"><figcaption class="caption">图 7｜关键区位与设施特征的散点图矩阵。</figcaption></figure></article>
+          </section>
+
+          <section class="reveal">
+            <h2>局限与下一步</h2>
+            <ul>
+              <li>地图平台 POI 数量不等于设施质量、服务容量、步行可达性或居民满意度。</li>
+              <li>500 米为统一比较口径，未考虑道路网络、出入口和真实步行路径。</li>
+              <li>部分外围圈层样本量较小，圈层差异需要更多样本验证。</li>
+              <li>下一步可以加入人口结构、建筑年代、公交可达性和社区访谈信息。</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> baishi-oss</span><a href="../">返回作品集首页</a></div></footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

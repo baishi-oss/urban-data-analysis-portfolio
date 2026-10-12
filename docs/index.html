@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从 Python 基础到城市更新与空间数据分析的学习和项目作品集。">
+  <meta name="theme-color" content="#1f5b4a">
+  <title>城市数据分析作品集｜baishi-oss</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="./" aria-label="返回首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V8l5-3v14m0-9 5-3v12m0-8 6-3v11M2 19h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>城市数据分析作品集</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#projects">代表项目</a>
+        <a href="#learning">学习路径</a>
+        <a href="#methods">方法与原则</a>
+        <a href="https://github.com/baishi-oss/urban-data-analysis-portfolio">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Python · Urban Renewal · Spatial Data</p>
+          <h1>从 Python 基础，走向<span class="accent">城市更新数据分析</span></h1>
+          <p class="hero-lead">这里记录我如何把函数、JSON、pandas 与数据可视化逐步应用到真实问题：整理城市更新资料、分析公共服务设施，并用清晰图表表达空间差异。</p>
+          <div class="actions">
+            <a class="button button-primary" href="#projects">查看代表项目</a>
+            <a class="button button-secondary" href="#learning">了解学习路径</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal" aria-label="南京老旧小区公共服务空间分布图预览">
+          <figure class="map-card">
+            <img src="assets/images/nanjing/spatial-pattern.png" alt="南京老旧小区周边公共服务设施空间分布分析图">
+          </figure>
+          <div class="floating-note note-top"><strong>194</strong>个老旧小区分析样本</div>
+          <div class="floating-note note-bottom"><strong>500m</strong>六类公共服务设施范围</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-tight" aria-label="作品集数据概览">
+      <div class="metric-strip reveal">
+        <div class="metric"><strong>2</strong><span>完整数据分析项目</span></div>
+        <div class="metric"><strong>4 周</strong><span>精选基础学习路径</span></div>
+        <div class="metric"><strong>12</strong><span>项目分析图表</span></div>
+        <div class="metric"><strong>1 条</strong><span>从学习到应用的主线</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2 class="section-title">代表项目</h2>
+          </div>
+          <p class="section-copy">项目不只展示最终图片，也交代数据来源、处理过程、分析口径和局限。重点是让结果可以核对，让方法可以复现。</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card featured reveal">
+            <div class="project-image"><img src="assets/images/nanjing/distance-decay.png" alt="南京公共服务设施区位衰减与圈层差异图"></div>
+            <div class="project-body">
+              <p class="eyebrow">Urban renewal · Featured</p>
+              <h3>南京 2024—2025 年老旧小区周边公共服务分析</h3>
+              <p>围绕 500 米生活圈，从区际差异、空间格局、设施结构、距离衰减和配套盲区等角度观察改造小区的公共服务环境。</p>
+              <div class="tags"><span class="tag">pandas</span><span class="tag">空间分析</span><span class="tag">Seaborn</span><span class="tag orange">城市更新</span></div>
+              <div class="actions"><a class="button button-primary button-small" href="projects/nanjing.html">阅读项目</a><a class="button button-secondary button-small" href="https://github.com/baishi-oss/urban-data-analysis-portfolio/tree/main/projects/nanjing-public-service">查看代码</a></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image"><img src="assets/images/california/geography.png" alt="加州房价地理分布图"></div>
+            <div class="project-body">
+              <p class="eyebrow">Exploratory analysis</p>
+              <h3>加州房价探索性数据分析</h3>
+              <p>从特征分布、异常值、地理位置和变量相关性入手，建立一套基础但完整的探索性分析流程。</p>
+              <div class="tags"><span class="tag">scikit-learn</span><span class="tag">Matplotlib</span><span class="tag">EDA</span></div>
+              <a class="button button-secondary button-small" href="projects/california.html">阅读项目</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-body">
+              <p class="eyebrow">Learning archive</p>
+              <h3>Python 基础学习记录</h3>
+              <p>用城市设施示例练习模块拆分、JSON 读写、异常处理、pandas 清洗与 Matplotlib 可视化，保留从错误到改进的学习痕迹。</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">JSON</span><span class="tag">pandas</span><span class="tag">NumPy</span></div>
+              <a class="button button-secondary button-small" href="#learning">查看学习路径</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="learning">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Learning path</p>
+            <h2 class="section-title">基础学习路径</h2>
+          </div>
+          <p class="section-copy">精选每个阶段最能说明能力变化的文件，而不是堆放所有练习。每一周都与后续城市数据项目中的一个实际环节对应。</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card reveal"><h3>Python 模块与数据清洗</h3><p>函数、模块拆分、装饰器、字典累计统计；建立“输入—清洗—统计—输出”的程序结构。</p><a href="https://github.com/baishi-oss/urban-data-analysis-portfolio/tree/main/learning/week01-python-basics">查看精选练习 →</a></article>
+          <article class="timeline-card reveal"><h3>JSON 与异常处理</h3><p>文件读写、中文 JSON 输出、累计计算，以及文件不存在和格式错误的异常捕获。</p><a href="https://github.com/baishi-oss/urban-data-analysis-portfolio/tree/main/learning/week02-json-io">查看精选练习 →</a></article>
+          <article class="timeline-card reveal"><h3>pandas 数据处理</h3><p>空格清理、类型转换、缺失值、重复值、筛选、groupby 聚合和排序。</p><a href="https://github.com/baishi-oss/urban-data-analysis-portfolio/tree/main/learning/week03-pandas">查看精选练习 →</a></article>
+          <article class="timeline-card reveal"><h3>NumPy 与数据可视化</h3><p>数组、随机数、累计计算和 Matplotlib 图形输出，为项目可视化打基础。</p><a href="https://github.com/baishi-oss/urban-data-analysis-portfolio/tree/main/learning/week04-visualization">查看精选练习 →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" aria-label="学习到项目的连接">
+      <div class="container reveal">
+        <p class="eyebrow">From practice to project</p>
+        <h2 class="section-title">基础练习最终落实到真实项目</h2>
+        <div class="flow" aria-label="学习发展流程">
+          <div class="flow-step">函数与模块</div><div class="flow-arrow">→</div>
+          <div class="flow-step">JSON / CSV 读写</div><div class="flow-arrow">→</div>
+          <div class="flow-step">pandas 清洗统计</div><div class="flow-arrow">→</div>
+          <div class="flow-step">图表与空间表达</div><div class="flow-arrow">→</div>
+          <div class="flow-step">城市更新分析项目</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="methods">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow">Working principles</p><h2 class="section-title">方法与公开原则</h2></div><p class="section-copy">作品集不仅关心“画出了什么图”，也关心数据是否可解释、结论是否克制、公开内容是否安全。</p></div>
+        <div class="principles">
+          <article class="principle reveal"><h3>来源可追溯</h3><p>记录公开资料来源和字段口径，不在缺少证据时把区级汇总强行拆分到单个小区。</p></article>
+          <article class="principle reveal"><h3>结论有边界</h3><p>区分相关与因果，明确 POI 数量不能代替设施质量、容量、可达性和居民满意度。</p></article>
+          <article class="principle reveal"><h3>代码可公开</h3><p>API 密钥只从环境变量读取；不提交真实密钥、虚拟环境、本机绝对路径和私人数据。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row"><span>© <span data-year></span> baishi-oss · 城市数据分析学习作品集</span><a href="https://github.com/baishi-oss">GitHub @baishi-oss</a></div>
+  </footer>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

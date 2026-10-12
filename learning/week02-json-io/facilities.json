@@ -1,0 +1,12 @@
+[
+    {
+        "name": "社区卫生服务中心",
+        "category": "医疗",
+        "quantity": 2
+    },
+    {
+        "name": "小学",
+        "category": "教育",
+        "quantity": 5
+    }
+]
