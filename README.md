@@ -15,12 +15,16 @@ GitHub Pages：<https://baishi-oss.github.io/urban-data-analysis-portfolio/>
 - [项目代码与分析材料](projects/nanjing-public-service)
 - [网页项目说明](https://baishi-oss.github.io/urban-data-analysis-portfolio/projects/nanjing.html)
 
+![南京老旧小区公共服务空间分布](projects/nanjing-public-service/figures/图2_空间分布.png)
+
 ### 加州房价探索性数据分析
 
 使用 scikit-learn California Housing 数据集练习异常值检查、特征分布、空间分布、相关性分析和散点图矩阵。
 
 - [项目代码与分析材料](projects/california-housing)
 - [网页项目说明](https://baishi-oss.github.io/urban-data-analysis-portfolio/projects/california.html)
+
+![加州房价地理分布](projects/california-housing/figures/03_加州房价地理分布.png)
 
 ## 基础学习路径
 
